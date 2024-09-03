@@ -5,7 +5,10 @@ import { RQSuperHeroesPage } from "./components/RQSuperHeroes.page";
 import { SuperHeroesPage } from "./components/SuperHeroes.page";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import RQSuperHero from "./components/RQSuperHero";
+import RQSuperHero from "./components/RQSuperHero.page";
+import ParallelQueriesPage from "./components/ParallelQueries.page";
+import DynamicParallelQueriesPage from "./components/DynamicParallelQueries.page";
+import DependentQueriesPage from "./components/DependentQueries.page";
 
 const queryClient = new QueryClient();
 
@@ -25,12 +28,32 @@ function App() {
               <li>
                 <Link to="/rq-super-heroes">RQ Super Heroes</Link>
               </li>
+              <li>
+                <Link to="/rq-parallel">RQ Parallel Queries</Link>
+              </li>
+              <li>
+                <Link to="/rq-dynamic-parallel">
+                  RQ Dynamic Parallel Queries
+                </Link>
+              </li>
+              <li>
+                <Link to="/rq-dependent">RQ dependent Queries</Link>
+              </li>
             </ul>
           </nav>
           <Routes>
             <Route path="/super-heroes" element={<SuperHeroesPage />} />
             <Route path="/rq-super-heroes" element={<RQSuperHeroesPage />} />
             <Route path="/rq-super-heroes/:heroId" element={<RQSuperHero />} />
+            <Route path="/rq-parallel" element={<ParallelQueriesPage />} />
+            <Route
+              path="/rq-dynamic-parallel"
+              element={<DynamicParallelQueriesPage heroIds={[1, 3]} />}
+            />
+            <Route
+              path="/rq-dependent"
+              element={<DependentQueriesPage email="vishwas@example.com" />}
+            />
             <Route path="/" element={<HomePage />} />
           </Routes>
         </div>
