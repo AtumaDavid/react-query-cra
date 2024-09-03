@@ -12,10 +12,10 @@ export const useSuperHerosData = (onSuccess, onError) => {
     {
       onSuccess: onSuccess,
       onError,
-      select: (data) => {
-        const superHeroesNames = data.data.map((hero) => hero.name);
-        return superHeroesNames;
-      }, //automatically receives an api doc and an argument
+      // select: (data) => {
+      //   const superHeroesNames = data.data.map((hero) => hero.name);
+      //   return superHeroesNames;
+      // }, //automatically receives an api doc and an argument
     },
     {
       // cacheTime: 10000,
