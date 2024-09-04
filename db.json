@@ -1,32 +1,52 @@
 {
   "superheroes": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Batman",
       "alterEgo": "Bruce Wayne"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Superman",
       "alterEgo": "Clark Kent"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Wonder Woman",
       "alterEgo": "Princess Diana"
+    },
+    {
+      "id": "8589",
+      "name": "the flash",
+      "alterEgo": "barry allen"
+    },
+    {
+      "id": "b8c7",
+      "name": "Shazam",
+      "alterEgo": "Bill Batson"
+    },
+    {
+      "id": "864e",
+      "name": "Green Arrow",
+      "alterEgo": "Oliver Queen"
+    },
+    {
+      "id": "1f8d",
+      "name": "selina Kyle",
+      "alterEgo": "Cat Woman"
     }
   ],
   "friends": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Chandler Bing"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Joey Tribbiani"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Rachel Green"
     }
   ],
@@ -48,35 +68,35 @@
   ],
   "colors": [
     {
-      "id": 1,
+      "id": "1",
       "label": "red"
     },
     {
-      "id": 2,
+      "id": "2",
       "label": "blue"
     },
     {
-      "id": 3,
+      "id": "3",
       "label": "green"
     },
     {
-      "id": 4,
+      "id": "4",
       "label": "yellow"
     },
     {
-      "id": 5,
+      "id": "5",
       "label": "black"
     },
     {
-      "id": 6,
+      "id": "6",
       "label": "white"
     },
     {
-      "id": 7,
+      "id": "7",
       "label": "orange"
     },
     {
-      "id": 8,
+      "id": "8",
       "label": "purple"
     }
   ]

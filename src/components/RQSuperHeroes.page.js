@@ -2,13 +2,20 @@
 // import { useQuery } from "react-query";
 
 import { Link } from "react-router-dom";
-import { useSuperHerosData } from "../hooks/useSuperHerosData";
+import {
+  useSuperHerosData,
+  useAddSuperHeroData,
+} from "../hooks/useSuperHerosData";
+import { useState } from "react";
 
 // const fetchSuperHeroes = () => {
 //   return axios.get("http://localhost:4000/superheroes");
 // };
 
 export const RQSuperHeroesPage = () => {
+  const [name, setName] = useState("");
+  const [alterEgo, setAlterEgo] = useState("");
+
   const onSuccess = (data) => {
     console.log("perform side effect after data fetching", data);
   };
@@ -40,6 +47,8 @@ export const RQSuperHeroesPage = () => {
   //   }
   // );
 
+  const { mutate: addHero } = useAddSuperHeroData();
+
   console.log(`loading: ${isLoading}`, `fetching: ${isFetching}`);
 
   if (isLoading || isFetching) {
@@ -49,6 +58,11 @@ export const RQSuperHeroesPage = () => {
   if (isError) {
     return <h2>Error: {error.message}</h2>;
   }
+
+  const handleAddHeroClick = () => {
+    const hero = { name, alterEgo };
+    addHero(hero);
+  };
 
   return (
     <>
@@ -60,6 +74,20 @@ export const RQSuperHeroesPage = () => {
       {/* {data.map((heroName, index) => {
         return <div key={index}>{heroName}</div>;
       })} */}
+      <div>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="text"
+          value={alterEgo}
+          onChange={(e) => setAlterEgo(e.target.value)}
+        />
+        <button onClick={handleAddHeroClick}>Add Hero</button>
+      </div>
+      <button onClick={refetch}>Fetch heroes</button>
       {data?.data.map((hero) => {
         return (
           <div key={hero.name}>
